@@ -16,3 +16,12 @@ class Article(models.Model):
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
 
+
+class News(models.Model):
+    title = models.CharField("Название", max_length=100)
+    image = models.ImageField(upload_to='images')
+    details = models.TextField("Подробности")
+    price = models.CharField("Цена", max_length=10)
+
+    def __str__(self):
+        return self.title
